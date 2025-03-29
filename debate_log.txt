@@ -1,0 +1,1 @@
+Critique from A about B: node_A critique > Node node_B's prediction:node_B prediction index: 1 Rationale: Disagrees with relevant science.

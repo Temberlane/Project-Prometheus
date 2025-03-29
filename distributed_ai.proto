@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+service NodeService {
+  rpc Predict (PredictRequest) returns (PredictResponse);
+  rpc Critique (CritiqueRequest) returns (CritiqueResponse);
+}
+
+message PredictRequest {
+  string input_text = 1;
+}
+
+message PredictResponse {
+  string prediction = 1;
+}
+
+message CritiqueRequest {
+  string node_id = 1;
+  string previous_prediction = 2;
+  string rationale = 3;
+}
+
+message CritiqueResponse {
+  string critique = 1;
+}
