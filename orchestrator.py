@@ -22,19 +22,15 @@ def critique_node(node_address, node_id, prev_pred, rationale):
 
 if __name__ == "__main__":
     text = "Bob Ross is still alive"
-    # Node A is on port 50052
     pred_A = query_node("localhost:50052", text)
-    print(f"Node A pred: {pred_A}")
-
-    # Node B is on port 50053
     pred_B = query_node("localhost:50053", text)
-    print(f"Node B pred: {pred_B}")
-
     critique_from_A = critique_node("localhost:50052", "node_B", pred_B, "Disagrees with relevant science.")
-    print(f"Critique from A about B: {critique_from_A}")
+    critique_from_B = critique_node("localhost:50053", "node_A", pred_A, "Check the data for consistency.")
 
     with open("debate_log.txt", "a") as f:
-        f.write(f"Critique from A about B: {critique_from_A}\n")
-
-    critique_from_B = critique_node("localhost:50053", "node_A", pred_A, "Check the data for consistency.")
-    print(f"Critique from B about A: {critique_from_B}")
+        f.write("--- Debate Start ---\n")
+        f.write(f"Node A says: {pred_A}\n")
+        f.write(f"Node B says: {pred_B}\n")
+        f.write(f"A critiques B: {critique_from_A}\n")
+        f.write(f"B critiques A: {critique_from_B}\n")
+        f.write("--- Debate End ---\n")
