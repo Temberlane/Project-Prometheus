@@ -1,6 +1,0 @@
---- Debate Start ---
-Node A says: node_A prediction index: 0
-Node B says: node_B prediction index: 1
-A critiques B: node_A critique > Node node_B's prediction:node_B prediction index: 1 Rationale: Disagrees with relevant science.
-B critiques A: node_B critique > Node node_A's prediction:node_A prediction index: 0 Rationale: Check the data for consistency.
---- Debate End ---
